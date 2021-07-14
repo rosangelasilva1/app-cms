@@ -1,6 +1,6 @@
 #container {
-  text-align: center;
-
+  text-align: left;
+  padding:25px;
   position: absolute;
   left: 0;
   right: 0;
@@ -8,6 +8,9 @@
   transform: translateY(-50%);
 }
 
+#container h1 {
+  text-align: center;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
