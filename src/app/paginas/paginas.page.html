@@ -1,0 +1,33 @@
+
+<app-menu></app-menu>
+
+<main class="container super-container">
+
+  <div class="page-header">
+    <h1 style="margin: 0px;">Páginas</h1>
+    <hr style="background: #acacac;">
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark text-center">
+        <tr>
+          <th>Nome</th>
+          <th>Restrita?</th>
+          <th>Login?</th>
+          <th>Home</th>
+        </tr>
+      </thead>
+
+      <tbody style="background: #fff;">
+        <tr *ngFor="let pagina of paginas">
+          <td>{{pagina.nome}}</td>
+          <td>{{pagina.areaRestrita ?"Sim" : "Não"}}</td>
+          <td>{{pagina.login ? "Sim" : "Não"}}</td>
+          <td>{{pagina.home ? "Sim" : "Não"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>

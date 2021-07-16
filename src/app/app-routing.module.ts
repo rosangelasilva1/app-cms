@@ -10,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'paginas',
+    loadChildren: () => import('./paginas/paginas.module').then( m => m.PaginasPageModule)
   }
 ];
 
