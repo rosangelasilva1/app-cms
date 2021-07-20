@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color = "tertiary">
     <ion-title>
       CMS do T.O.P
     </ion-title>
@@ -24,4 +24,9 @@
     <hr>
     <p> <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
+  <button (click)="abrirCamera()">Chamar câmera</button>
+
+  <img src="{{imagem}}">
+
 </ion-content>
