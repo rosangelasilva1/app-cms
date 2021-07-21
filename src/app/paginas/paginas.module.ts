@@ -1,4 +1,4 @@
-import { MenuComponent } from './../shared/menu/menu.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     PaginasPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [PaginasPage,MenuComponent]
+  declarations: [PaginasPage]
 })
 export class PaginasPageModule {}

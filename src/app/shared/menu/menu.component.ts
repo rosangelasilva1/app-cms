@@ -17,12 +17,12 @@ export class MenuComponent implements OnInit {
   }
 
 
-  abrirPaginas(){
+  carregarPaginas(){
     this.router.navigateByUrl("/paginas")
   }
 
-  abrirAdministradores(){
-
+  carregarAdministradores(){
+    this.router.navigateByUrl("/administradores")
   }
 
   sair(){

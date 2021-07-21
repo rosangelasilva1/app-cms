@@ -1,0 +1,30 @@
+<ion-header >
+  <ion-toolbar color = "tertiary">
+    <ion-title>
+      Administradores
+    </ion-title >
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"> </ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div >
+    <tr *ngFor="let adm of administradores">
+      <td>{{adm.nome}}</td>
+      <td>{{adm.telefone}}</td>
+      <td>{{adm.email}}</td>
+    </tr>
+  </div>
+</ion-content>
+
+
+
+
+
+
+
