@@ -11,14 +11,13 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
-  <div >
-    <tr *ngFor="let adm of administradores">
-      <td>{{adm.nome}}</td>
-      <td>{{adm.telefone}}</td>
-      <td>{{adm.email}}</td>
-    </tr>
+  <div class="container">
+    <div class="linha" *ngFor="let administrador of administradores">
+      <div><label>Nome:</label> {{administrador.nome}}</div>
+      <div><label>Telefone:</label> {{administrador.telefone}}</div>
+      <div><label>Email:</label> {{administrador.email}}</div>
+    </div>
   </div>
 </ion-content>
 
