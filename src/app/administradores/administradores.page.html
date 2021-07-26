@@ -12,16 +12,42 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <div class="linha" *ngFor="let administrador of administradores">
-      <div><label>Nome:</label> {{administrador.nome}}</div>
-      <div><label>Telefone:</label> {{administrador.telefone}}</div>
-      <div><label>Email:</label> {{administrador.email}}</div>
-    </div>
-  </div>
+
+  <ion-card *ngFor="let a of administradores">
+
+    <ion-card-header color="light">
+      <ion-card-title>
+        {{a.nome}}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label>Email:</ion-label>
+      <ion-item>
+        {{a.email}}
+        <ion-avatar slot="end">
+          <ion-button  color="warning" routerLink="/administradores/cadastrar-adm">Editar </ion-button>
+        </ion-avatar>
+        <ion-avatar slot="end">
+          <ion-button  color="danger">Excluir</ion-button>
+        </ion-avatar>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-header></ion-card-header>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" routerLink="/administradores/cadastrar-adm">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar color="primary">
 
+  </ion-toolbar>
+</ion-footer>
 
 
 
