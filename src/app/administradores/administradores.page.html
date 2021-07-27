@@ -26,10 +26,10 @@
       <ion-item>
         {{a.email}}
         <ion-avatar slot="end">
-          <ion-button  color="warning" routerLink="/administradores/cadastrar-adm">Editar </ion-button>
+          <ion-button  color="warning" (click)="alterar(a)">Editar </ion-button>
         </ion-avatar>
         <ion-avatar slot="end">
-          <ion-button  color="danger">Excluir</ion-button>
+          <ion-button  color="danger" (click)="excluir(a)">Excluir</ion-button>
         </ion-avatar>
       </ion-item>
     </ion-card-content>
@@ -37,10 +37,11 @@
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" routerLink="/administradores/cadastrar-adm">
+    <ion-fab-button color="success" (click)="novo()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
 </ion-content>
 
 <ion-footer>
