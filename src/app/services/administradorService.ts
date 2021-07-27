@@ -22,4 +22,9 @@ export class AdministradorService{
       return await this.http.post<Administrador>(`${environment.uri}/administradores.json`,administrador).toPromise()
     }
   }
+
+  public async Delete(administrador:Administrador){
+    return await this.http.delete<Administrador>(`${environment.uri}/administradores/${administrador.id}.json`).toPromise()
+  }
+
 }

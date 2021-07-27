@@ -20,6 +20,7 @@ export class AdministradoresPage implements OnInit {
   }
 
   public administradores:Administrador[]
+  public administrador:Administrador
 
   async carregarAdministradores(){
     this.administradores = await new AdministradorService(this.http).todos();
@@ -33,4 +34,9 @@ export class AdministradoresPage implements OnInit {
     this.router.navigateByUrl(`/administradores/administradores/novo`)
   }
 
+  public async excluir(adm: Administrador){
+    if(confirm("Confirma a exclusão?")){
+      this.administrador = await  new AdministradorService(this.http).Delete(adm);
+    }
+  }
 }
