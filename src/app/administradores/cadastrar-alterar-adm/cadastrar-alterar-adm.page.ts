@@ -37,7 +37,8 @@ export class CadastrarAlterarAdmPage implements OnInit {
 
   async salvar(){
     await new AdministradorService(this.http).salvar(this.administrador);
-    this.router.navigateByUrl(`/administradores`)
+    window.location.assign("/administradores")
+
   }
 
 }
