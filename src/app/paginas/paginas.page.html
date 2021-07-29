@@ -12,32 +12,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="thead-dark text-center">
-        <tr>
-          <th>Nome</th>
-          <th>Restrita?</th>
-          <th>Login?</th>
-          <th>Home</th>
-        </tr>
-      </thead>
-
-      <tbody style="background: #fff;">
-        <tr *ngFor="let pagina of paginas">
-          <td>{{pagina.nome}}</td>
-          <td>{{pagina.areaRestrita ?"Sim" : "Não"}}</td>
-          <td>{{pagina.login ? "Sim" : "Não"}}</td>
-          <td>{{pagina.home ? "Sim" : "Não"}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <ion-row class="header-row">
+    <ion-col size="5">Nome</ion-col>
+    <ion-col size="2">Área Restrita</ion-col>
+    <ion-col size="2">Login</ion-col>
+    <ion-col size="2">Home</ion-col>
+    <ion-col size="2">
+    </ion-col >
+    <ion-col size="2">
+    </ion-col >
+  </ion-row>
+  <ion-row *ngFor="let pagina of paginas" class="data-row">
+    <ion-col size="5">{{pagina.nome}}</ion-col>
+    <ion-col size="2">{{pagina.areaRestrita ?"Sim" : "Não"}}</ion-col>
+    <ion-col size="2">{{pagina.login ? "Sim" : "Não"}}</ion-col>
+    <ion-col size="2">{{pagina.home ? "Sim" : "Não"}}</ion-col>
+    <ion-col size="2">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="2">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar color="tertiary">
 
-
-
-
-
+  </ion-toolbar>
+</ion-footer>
 
