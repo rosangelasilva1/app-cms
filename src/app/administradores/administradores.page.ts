@@ -41,6 +41,7 @@ export class AdministradoresPage implements OnInit {
     if(confirm("Confirma a exclusão?")){
       this.administrador = await  new AdministradorService(this.http).Delete(adm);
     }
+    window.location.assign("/administradores")
   }
   primeiraPagina(){
     this.pagina=1
