@@ -6,8 +6,11 @@ import { Administrador } from '../models/administrador';
 export class AdministradorService{
   constructor (private http:HttpClient){}
 
-  public async todos(){
-    return await this.http.get<Administrador[]>(`${environment.uri}/administradores.json`).toPromise()
+  public static QTDE_POR_PAGINA=3
+
+  public async todos(pagina:number = 1){
+
+    return await this.http.get<Administrador[]>(`${environment.uri}/administradores.json?page=${pagina}`).toPromise()
   }
 
   public async getById(administrador:Administrador){
@@ -26,5 +29,13 @@ export class AdministradorService{
   public async Delete(administrador:Administrador){
     return await this.http.delete<Administrador>(`${environment.uri}/administradores/${administrador.id}.json`).toPromise()
   }
+
+  public async QtdeRegistros(){
+
+    var paginas = this.http.get<number>(`${environment.uri}/administradores/qtde_registros.json`).toPromise()
+    return paginas
+
+  }
+
 
 }
