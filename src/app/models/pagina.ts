@@ -1,11 +1,11 @@
-export interface Pagina{
+export  class Pagina{
 
-  id:number
-  nome:string
-  conteudo:string
-  areaRestrita:boolean
-  login:boolean
-  home:boolean
-  ordem:boolean
+  id:number=0
+  nome:string=""
+  conteudo:string=""
+  areaRestrita:boolean=false
+  login:boolean=false
+  home:boolean=false
+  ordem:number=0
 }
 

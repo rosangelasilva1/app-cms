@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: PaginasPage
+  },
+  {
+    path: 'paginas/novo',
+    loadChildren: () => import('./cad-alterar-paginas/cad-alterar-paginas.module').then( m => m.CadAlterarPaginasPageModule)
+  },
+  {
+    path: 'paginas/:id/editar',
+    loadChildren: () => import('./cad-alterar-paginas/cad-alterar-paginas.module').then( m => m.CadAlterarPaginasPageModule)
   }
 ];
 

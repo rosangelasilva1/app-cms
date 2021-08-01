@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="id==undefined">Cadastro de Páginas</ion-title>
+    <ion-title *ngIf="id > 0">Alteração de Páginas</ion-title>
+    <ion-icon name="arrow-back-outline" routerLink="/paginas"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]= "pagina.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Conteúdo</ion-label>
+      <ion-input type="text" [(ngModel)]= "pagina.conteudo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Área Restrita</ion-label>
+      <ion-checkbox slot="start"  [(ngModel)]= "pagina.areaRestrita" id="areaRestrita" name="areaRestrita"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Login</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]= "pagina.login" id="login" name="login"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Home</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]= "pagina.home" id="home" name="home"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ordem</ion-label>
+      <ion-input type="number" [(ngModel)]= "pagina.ordem"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button  expand="full" color="success" (click)="salvar()">Salvar </ion-button>
+</ion-content>

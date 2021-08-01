@@ -3,42 +3,93 @@
     <ion-title>
       Páginas
     </ion-title >
-
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"> </ion-menu-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-row class="header-row">
-    <ion-col size="5">Nome</ion-col>
-    <ion-col size="2">Área Restrita</ion-col>
-    <ion-col size="2">Login</ion-col>
-    <ion-col size="2">Home</ion-col>
+
+  <div id="container">
+    <div class="scroolTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Restrita?</th>
+            <th>Login?</th>
+            <th>Home?</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pagina of paginas">
+            <td>{{pagina.nome}}</td>
+            <td>{{pagina.areaRestrita ? "Sim" : "Não"}}</td>
+            <td>{{pagina.login ? "Sim" : "Não"}}</td>
+            <td>{{pagina.home ? "Sim" : "Não"}}</td>
+            <td>
+            <ion-avatar slot="end">
+              <br>
+              <ion-icon color= "warning" name="create-outline"  (click)="alterar(pagina)">Editar </ion-icon>
+
+            </ion-avatar>
+            </td>
+            <td>
+            <ion-avatar slot="end">
+              <br>
+              <ion-icon color="danger"  name="trash-outline"(click)="excluir(pagina)">Excluir</ion-icon>
+            </ion-avatar>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+
+  <ion-row>
     <ion-col size="2">
-    </ion-col >
-    <ion-col size="2">
-    </ion-col >
-  </ion-row>
-  <ion-row *ngFor="let pagina of paginas" class="data-row">
-    <ion-col size="5">{{pagina.nome}}</ion-col>
-    <ion-col size="2">{{pagina.areaRestrita ?"Sim" : "Não"}}</ion-col>
-    <ion-col size="2">{{pagina.login ? "Sim" : "Não"}}</ion-col>
-    <ion-col size="2">{{pagina.home ? "Sim" : "Não"}}</ion-col>
-    <ion-col size="2">
-      <ion-icon name="create-outline"></ion-icon>
+    <ion-button fill="clear" (click)="primeiraPagina()">
+      <ion-icon name="play-back" slot="icon-only"></ion-icon>
+    </ion-button>
     </ion-col>
+
     <ion-col size="2">
-      <ion-icon name="trash-outline"></ion-icon>
+    <ion-button fill="clear" (click)="paginaAnterior()">
+      <ion-icon  *ngIf="pagina!=1" name="chevron-back" slot="icon-only"></ion-icon>
+    </ion-button>
+    </ion-col>
+
+    <ion-col size="2">
+      <br>
+      {{pagina}} de {{nrPagTotal}}
+    </ion-col>
+
+    <ion-col size="2">
+    <ion-button fill="clear" (click)="proximaPagina()">
+      <ion-icon *ngIf="pagina!=nrPagTotal" name="chevron-forward" slot="icon-only"></ion-icon>
+    </ion-button>
+    </ion-col>
+
+    <ion-col size="2">
+    <ion-button fill="clear" (click)="ultimaPagina()">
+      <ion-icon name="play-forward" slot="icon-only"></ion-icon>
+    </ion-button>
     </ion-col>
   </ion-row>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="novo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar color="tertiary">
-
   </ion-toolbar>
 </ion-footer>
 
